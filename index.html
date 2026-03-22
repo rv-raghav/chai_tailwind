@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="ChaiCSS is a tiny utility-first styling experiment that scans chai-* classes and turns them into real CSS."
+  >
+  <title>ChaiCSS | A tiny chai-powered utility CSS experiment</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="dist/chai-css.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="site-header chai-maxw-1200 chai-mx-auto chai-px-24 chai-py-24">
+      <div class="panel-strip chai-p-16 chai-rounded-full">
+        <div class="chai-flex chai-items-center chai-justify-between chai-gap-16 chai-wrap">
+          <a class="brand-mark chai-inline-block chai-px-16 chai-py-8 chai-rounded-full chai-bg-foam chai-text-cocoa chai-font-bold chai-shadow-sm" href="#">
+            ChaiCSS
+          </a>
+
+          <nav class="top-nav chai-flex chai-items-center chai-gap-12 chai-wrap">
+            <a href="#utilities">Utilities</a>
+            <a href="#playground">Playground</a>
+            <a href="#reference">Reference</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="chai-maxw-1200 chai-mx-auto chai-px-24 chai-pb-64">
+      <section class="hero-grid">
+        <article class="hero-copy reveal chai-p-32 chai-rounded-2xl chai-bg-foam chai-border chai-border-mist chai-shadow-lg" style="--delay: 0.06s;">
+          <span class="eyebrow chai-inline-block chai-px-14 chai-py-8 chai-rounded-full chai-bg-cream chai-text-chai chai-text-sm chai-font-semibold chai-uppercase chai-tracking-wide">
+            Zero-build utility experiment
+          </span>
+
+          <h1 class="chai-text-5xl chai-font-black chai-text-cocoa chai-leading-tight chai-mt-20">
+            Brew your own utility CSS with <code>chai-*</code> classes.
+          </h1>
+
+          <p class="chai-text-lg chai-text-slate chai-leading-relaxed chai-mt-16 chai-maxw-680">
+            This repo started as a simple proof of concept. Now it behaves more like a tiny
+            utility engine: it scans <code>chai-</code> classes, generates CSS at runtime, and
+            gives you a clean landing page to show what the system can do.
+          </p>
+
+          <div class="hero-actions chai-flex chai-items-center chai-gap-12 chai-wrap chai-mt-24">
+            <a class="button-primary chai-inline-block chai-px-18 chai-py-12 chai-rounded-full chai-bg-chai chai-text-cream chai-font-bold chai-shadow-sm" href="#playground">
+              See it in action
+            </a>
+            <a class="button-secondary chai-inline-block chai-px-18 chai-py-12 chai-rounded-full chai-bg-cream chai-text-cocoa chai-font-bold chai-border chai-border-mist" href="#reference">
+              Browse utilities
+            </a>
+          </div>
+
+          <div class="metric-row chai-flex chai-gap-12 chai-wrap chai-mt-24">
+            <div class="metric-pill chai-inline-block chai-px-16 chai-py-10 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+              <span data-chai-family-count>0</span> utility families
+            </div>
+            <div class="metric-pill chai-inline-block chai-px-16 chai-py-10 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+              <span data-chai-color-count>0</span> color tokens
+            </div>
+            <div class="metric-pill chai-inline-block chai-px-16 chai-py-10 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+              <span data-chai-example-count>0</span> example classes
+            </div>
+          </div>
+        </article>
+
+        <aside class="showcase-stack">
+          <div class="preview-window reveal chai-p-24 chai-rounded-2xl chai-bg-cocoa chai-text-cream chai-shadow-lg" style="--delay: 0.14s;">
+            <div class="window-bar chai-flex chai-items-center chai-justify-between chai-gap-16 chai-mb-16">
+              <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="chai-text-sm chai-text-cream chai-opacity-80">runtime css</span>
+            </div>
+
+            <pre class="code-sample"><code>&lt;section class="chai-bg-foam chai-p-24
+chai-rounded-xl chai-shadow-md"&gt;
+  &lt;h2 class="chai-text-2xl chai-font-bold
+chai-text-cocoa"&gt;
+    Freshly brewed utilities
+  &lt;/h2&gt;
+  &lt;p class="chai-text-slate chai-mt-12"&gt;
+    No build step. Just scan and style.
+  &lt;/p&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+
+          <div class="mini-demo reveal chai-p-24 chai-rounded-2xl chai-bg-foam chai-border chai-border-mist chai-shadow-md" style="--delay: 0.22s;">
+            <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap chai-mb-16">
+              <div>
+                <div class="chai-text-sm chai-text-chai chai-uppercase chai-tracking-wide chai-font-semibold">
+                  Live utility card
+                </div>
+                <h2 class="chai-text-2xl chai-font-bold chai-text-cocoa chai-mt-8">
+                  Chai starter component
+                </h2>
+              </div>
+              <span class="chai-inline-block chai-px-14 chai-py-8 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+                chai-shadow-md
+              </span>
+            </div>
+
+            <p class="chai-text-slate chai-leading-relaxed chai-mb-20">
+              Mix spacing, type, surface, and layout helpers to build polished components with a
+              small vocabulary.
+            </p>
+
+            <div class="chai-flex chai-gap-12 chai-wrap">
+              <span class="chai-inline-block chai-px-14 chai-py-10 chai-rounded-full chai-bg-chai chai-text-cream chai-font-bold">
+                chai-bg-chai
+              </span>
+              <span class="chai-inline-block chai-px-14 chai-py-10 chai-rounded-full chai-bg-cream chai-text-cocoa chai-border chai-border-mist chai-font-bold">
+                chai-border-mist
+              </span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-shell chai-mt-40" id="utilities">
+        <div class="section-heading reveal" style="--delay: 0.1s;">
+          <span class="section-label">Utility sampler</span>
+          <h2 class="chai-text-3xl chai-font-black chai-text-cocoa chai-leading-tight chai-mt-12">
+            Keep the engine simple, but give it real range.
+          </h2>
+          <p class="chai-text-lg chai-text-slate chai-leading-relaxed chai-mt-12 chai-maxw-680">
+            The original version covered padding, margin, colors, and a few text helpers. This
+            version adds layout, sizing, shadows, borders, radius, and a warmer design language
+            so the framework feels more intentional.
+          </p>
+        </div>
+
+        <div class="feature-grid chai-mt-24">
+          <article class="utility-card reveal chai-p-24 chai-rounded-xl chai-bg-foam chai-border chai-border-mist chai-shadow-sm" style="--delay: 0.12s;">
+            <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap">
+              <h3 class="chai-text-xl chai-font-bold chai-text-cocoa">Spacing and sizing</h3>
+              <span class="badge-label chai-inline-block chai-px-12 chai-py-8 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+                arbitrary px values
+              </span>
+            </div>
+
+            <p class="chai-text-slate chai-leading-relaxed chai-mt-12">
+              Numeric spacing classes let you move quickly without introducing a separate scale
+              compiler.
+            </p>
+
+            <div class="stack-sample chai-p-20 chai-rounded-xl chai-bg-cream chai-mt-20">
+              <div class="chai-p-24 chai-rounded-xl chai-bg-card chai-border chai-border-mist">
+                <div class="chai-p-16 chai-rounded-lg chai-bg-foam chai-border chai-border-mist chai-text-cocoa chai-font-semibold">
+                  chai-p-24 + chai-maxw-680
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="utility-card reveal chai-p-24 chai-rounded-xl chai-bg-foam chai-border chai-border-mist chai-shadow-sm" style="--delay: 0.18s;">
+            <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap">
+              <h3 class="chai-text-xl chai-font-bold chai-text-cocoa">Typography and color</h3>
+              <span class="badge-label chai-inline-block chai-px-12 chai-py-8 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+                text + palette helpers
+              </span>
+            </div>
+
+            <p class="chai-text-slate chai-leading-relaxed chai-mt-12">
+              Text size, weight, leading, tracking, and color tokens work together for quick visual
+              hierarchy.
+            </p>
+
+            <div class="typography-sample chai-p-20 chai-rounded-xl chai-bg-cocoa chai-mt-20">
+              <div class="chai-text-sm chai-text-gold chai-uppercase chai-tracking-wide chai-font-semibold">
+                chai-text-sm
+              </div>
+              <div class="chai-text-2xl chai-text-cream chai-font-bold chai-mt-8">
+                chai-text-2xl + chai-font-bold
+              </div>
+              <p class="chai-text-sand chai-leading-relaxed chai-mt-12">
+                Pair warm background tones with high-contrast text tokens for landing pages, cards,
+                or product callouts.
+              </p>
+            </div>
+          </article>
+
+          <article class="utility-card reveal chai-p-24 chai-rounded-xl chai-bg-foam chai-border chai-border-mist chai-shadow-sm" style="--delay: 0.24s;">
+            <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap">
+              <h3 class="chai-text-xl chai-font-bold chai-text-cocoa">Layout primitives</h3>
+              <span class="badge-label chai-inline-block chai-px-12 chai-py-8 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+                flex and grid
+              </span>
+            </div>
+
+            <p class="chai-text-slate chai-leading-relaxed chai-mt-12">
+              Small layout utilities are enough to build toolbars, cards, rows, and responsive
+              content shells.
+            </p>
+
+            <div class="layout-sample chai-p-20 chai-rounded-xl chai-bg-cream chai-mt-20">
+              <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap chai-p-16 chai-rounded-lg chai-bg-card chai-border chai-border-mist">
+                <span class="chai-text-cocoa chai-font-bold">chai-flex</span>
+                <div class="chai-flex chai-gap-12 chai-wrap">
+                  <span class="chip-lite chai-inline-block chai-px-12 chai-py-8 chai-rounded-full chai-bg-foam chai-text-cocoa chai-text-sm chai-font-semibold">items-center</span>
+                  <span class="chip-lite chai-inline-block chai-px-12 chai-py-8 chai-rounded-full chai-bg-foam chai-text-cocoa chai-text-sm chai-font-semibold">justify-between</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="utility-card reveal chai-p-24 chai-rounded-xl chai-bg-foam chai-border chai-border-mist chai-shadow-sm" style="--delay: 0.3s;">
+            <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap">
+              <h3 class="chai-text-xl chai-font-bold chai-text-cocoa">Surfaces and polish</h3>
+              <span class="badge-label chai-inline-block chai-px-12 chai-py-8 chai-rounded-full chai-bg-cream chai-text-cocoa chai-text-sm chai-font-semibold">
+                border, shadow, radius
+              </span>
+            </div>
+
+            <p class="chai-text-slate chai-leading-relaxed chai-mt-12">
+              Border, radius, and shadow utilities make the utilities useful for real components,
+              not just rough prototypes.
+            </p>
+
+            <div class="surface-sample chai-grid chai-gap-16 chai-mt-20">
+              <div class="chai-p-20 chai-rounded-xl chai-bg-card chai-border chai-border-mist chai-shadow-sm">
+                <div class="chai-text-cocoa chai-font-bold">chai-rounded-xl</div>
+                <div class="chai-text-slate chai-mt-8">Soft radius with a warm surface.</div>
+              </div>
+              <div class="chai-p-20 chai-rounded-xl chai-bg-chai chai-text-cream chai-shadow-md">
+                <div class="chai-font-bold">chai-shadow-md</div>
+                <div class="chai-opacity-80 chai-mt-8">Depth without heavy styling logic.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell chai-mt-48" id="playground">
+        <div class="section-heading reveal" style="--delay: 0.08s;">
+          <span class="section-label">Playground</span>
+          <h2 class="chai-text-3xl chai-font-black chai-text-cocoa chai-leading-tight chai-mt-12">
+            Let people edit the classes and watch the component respond.
+          </h2>
+          <p class="chai-text-lg chai-text-slate chai-leading-relaxed chai-mt-12 chai-maxw-680">
+            The best playground is hands-on. Edit the class strings, swap presets, tap utility
+            tokens, and let the preview re-render through the same runtime that powers the page.
+          </p>
+        </div>
+
+        <div class="playground-grid chai-mt-24" data-playground>
+          <article class="playground-panel reveal chai-p-24 chai-rounded-2xl chai-bg-foam chai-border chai-border-mist chai-shadow-lg" style="--delay: 0.14s;">
+            <div class="chai-flex chai-items-center chai-justify-between chai-gap-12 chai-wrap">
+              <div>
+                <div class="chai-text-sm chai-text-chai chai-uppercase chai-tracking-wide chai-font-semibold">
+                  Live editor
+                </div>
+                <h3 class="chai-text-2xl chai-font-bold chai-text-cocoa chai-mt-8">
+                  Change the classes, copy, and preset in one place.
+                </h3>
+              </div>
+
+              <button
+                type="button"
+                class="preset-button chai-inline-block chai-px-16 chai-py-10 chai-rounded-full chai-bg-cream chai-text-cocoa chai-font-bold chai-border chai-border-mist"
+                data-playground-reset
+              >
+                Reset
+              </button>
+            </div>
+
+            <p class="chai-text-slate chai-leading-relaxed chai-mt-16">
+              Focus a class field, then tap the quick-add utility chips to append tokens without
+              typing every class manually.
+            </p>
+
+            <div class="editor-stack chai-mt-20">
+              <div class="playground-field is-active">
+                <label for="playground-card-classes">Card classes</label>
+                <textarea
+                  id="playground-card-classes"
+                  class="playground-textarea"
+                  rows="4"
+                  data-playground-field
+                  data-playground-card-classes
+                >chai-bg-foam chai-p-24 chai-rounded-2xl chai-border chai-border-mist chai-shadow-md</textarea>
+              </div>
+
+              <div class="editor-duo">
+                <div class="playground-field">
+                  <label for="playground-badge-classes">Badge classes</label>
+                  <input
+                    id="playground-badge-classes"
+                    class="playground-input"
+                    type="text"
+                    value="chai-inline-block chai-text-sm chai-text-chai chai-uppercase chai-tracking-wide chai-font-semibold"
+                    data-playground-field
+                    data-playground-badge-classes
+                  >
+                </div>
+
+                <div class="playground-field">
+                  <label for="playground-title-classes">Title classes</label>
+                  <input
+                    id="playground-title-classes"
+                    class="playground-input"
+                    type="text"
+                    value="chai-text-2xl chai-font-bold chai-text-cocoa chai-mt-8"
+                    data-playground-field
+                    data-playground-title-classes
+                  >
+                </div>
+              </div>
+
+              <div class="playground-field">
+                <label for="playground-body-classes">Body classes</label>
+                <input
+                  id="playground-body-classes"
+                  class="playground-input"
+                  type="text"
+                  value="chai-text-slate chai-leading-relaxed chai-mt-12"
+                  data-playground-field
+                  data-playground-body-classes
+                >
+              </div>
+            </div>
+
+            <div class="editor-stack chai-mt-20">
+              <div class="playground-field">
+                <label for="playground-badge-copy">Badge text</label>
+                <input
+                  id="playground-badge-copy"
+                  class="playground-input"
+                  type="text"
+                  value="Chai component"
+                  data-playground-badge-copy
+                >
+              </div>
+
+              <div class="playground-field">
+                <label for="playground-title-copy">Title text</label>
+                <input
+                  id="playground-title-copy"
+                  class="playground-input"
+                  type="text"
+                  value="Utility-first card"
+                  data-playground-title-copy
+                >
+              </div>
+
+              <div class="playground-field">
+                <label for="playground-body-copy">Body text</label>
+                <textarea
+                  id="playground-body-copy"
+                  class="playground-textarea"
+                  rows="3"
+                  data-playground-body-copy
+                >Build polished blocks with spacing, typography, surface, and alignment helpers from the same small system.</textarea>
+              </div>
+            </div>
+
+            <div class="playground-actions chai-mt-20">
+              <div class="chai-text-sm chai-text-chai chai-uppercase chai-tracking-wide chai-font-semibold">
+                Quick-add utilities
+              </div>
+              <div class="token-wall chai-mt-12">
+                <button type="button" class="token-pill" data-playground-token="chai-bg-cocoa">chai-bg-cocoa</button>
+                <button type="button" class="token-pill" data-playground-token="chai-bg-foam">chai-bg-foam</button>
+                <button type="button" class="token-pill" data-playground-token="chai-text-cream">chai-text-cream</button>
+                <button type="button" class="token-pill" data-playground-token="chai-text-cocoa">chai-text-cocoa</button>
+                <button type="button" class="token-pill" data-playground-token="chai-rounded-xl">chai-rounded-xl</button>
+                <button type="button" class="token-pill" data-playground-token="chai-rounded-2xl">chai-rounded-2xl</button>
+                <button type="button" class="token-pill" data-playground-token="chai-border">chai-border</button>
+                <button type="button" class="token-pill" data-playground-token="chai-border-mist">chai-border-mist</button>
+                <button type="button" class="token-pill" data-playground-token="chai-shadow-sm">chai-shadow-sm</button>
+                <button type="button" class="token-pill" data-playground-token="chai-shadow-md">chai-shadow-md</button>
+                <button type="button" class="token-pill" data-playground-token="chai-shadow-lg">chai-shadow-lg</button>
+                <button type="button" class="token-pill" data-playground-token="chai-p-24">chai-p-24</button>
+                <button type="button" class="token-pill" data-playground-token="chai-mt-12">chai-mt-12</button>
+                <button type="button" class="token-pill" data-playground-token="chai-text-3xl">chai-text-3xl</button>
+                <button type="button" class="token-pill" data-playground-token="chai-font-black">chai-font-black</button>
+              </div>
+            </div>
+
+            <div class="preset-row chai-flex chai-gap-12 chai-wrap chai-mt-20">
+              <button type="button" class="preset-button" data-playground-preset="starter">Warm starter</button>
+              <button type="button" class="preset-button" data-playground-preset="contrast">Dark contrast</button>
+              <button type="button" class="preset-button" data-playground-preset="editorial">Soft editorial</button>
+            </div>
+
+            <div class="chai-text-sm chai-text-chai chai-uppercase chai-tracking-wide chai-font-semibold chai-mt-24">
+              Live markup
+            </div>
+            <pre class="code-sample playground-code-block chai-mt-12"><code data-playground-code></code></pre>
+          </article>
+
+          <article class="playground-stage reveal chai-p-24 chai-rounded-2xl chai-bg-cocoa chai-text-cream chai-shadow-lg" style="--delay: 0.22s;">
+            <div class="chai-text-sm chai-text-gold chai-uppercase chai-tracking-wide chai-font-semibold">
+              Live output
+            </div>
+            <h3 class="chai-text-2xl chai-font-bold chai-text-cream chai-mt-8">
+              The preview below uses the exact class strings from the editor.
+            </h3>
+            <p class="chai-text-sand chai-leading-relaxed chai-mt-12">
+              Each update calls the runtime again, so the playground doubles as a test bed for your
+              growing `chai-*` vocabulary.
+            </p>
+
+            <div class="playground-canvas chai-p-20 chai-rounded-2xl chai-bg-cream chai-mt-20">
+              <article data-playground-card>
+                <span data-playground-badge></span>
+                <h3 data-playground-title></h3>
+                <p data-playground-body></p>
+
+                <div class="chai-flex chai-gap-12 chai-wrap chai-mt-20">
+                  <a class="button-primary chai-inline-block chai-px-18 chai-py-12 chai-rounded-full chai-bg-chai chai-text-cream chai-font-bold chai-shadow-sm" href="#reference">
+                    View references
+                  </a>
+                  <a class="button-secondary chai-inline-block chai-px-18 chai-py-12 chai-rounded-full chai-bg-cream chai-text-cocoa chai-font-bold chai-border chai-border-mist" href="#utilities">
+                    Study utility groups
+                  </a>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell chai-mt-48" id="reference">
+        <div class="section-heading reveal" style="--delay: 0.08s;">
+          <span class="section-label">Reference</span>
+          <h2 class="chai-text-3xl chai-font-black chai-text-cocoa chai-leading-tight chai-mt-12">
+            A quick class map for the current ChaiCSS vocabulary.
+          </h2>
+          <p class="chai-text-lg chai-text-slate chai-leading-relaxed chai-mt-12 chai-maxw-680">
+            The cards below are generated from the same JavaScript file as the utility engine, so
+            the page doubles as lightweight documentation.
+          </p>
+        </div>
+
+        <div class="reference-grid chai-mt-24" id="chai-reference"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer chai-maxw-1200 chai-mx-auto chai-px-24 chai-pb-48">
+      <div class="footer-note chai-p-24 chai-rounded-2xl chai-bg-foam chai-border chai-border-mist">
+        <p class="chai-text-cocoa chai-font-semibold">
+          ChaiCSS is intentionally small: a browser-first utility experiment with a warmer visual
+          identity and enough range to keep building.
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "name": "@atomic2103/chaicode-css",
+  "version": "0.1.0",
+  "description": "A tiny utility-first CSS runtime that turns chai-* classes into generated CSS in the browser.",
+  "main": "./dist/chai-css.js",
+  "module": "./dist/chai-css.mjs",
+  "types": "./dist/chai-css.d.ts",
+  "browser": "./dist/chai-css.js",
+  "exports": {
+    ".": {
+      "types": "./dist/chai-css.d.ts",
+      "import": "./dist/chai-css.mjs",
+      "require": "./dist/chai-css.js",
+      "default": "./dist/chai-css.js"
+    },
+    "./browser": "./dist/chai-css.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "unpkg": "./dist/chai-css.js",
+  "jsdelivr": "./dist/chai-css.js",
+  "keywords": [
+    "chai-css",
+    "css",
+    "utility-css",
+    "tailwind-like",
+    "browser-runtime"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "node --check script.js && node --check dist/chai-css.js && node --check dist/chai-css.mjs",
+    "pack:dry": "npm pack --dry-run --cache .npm-cache",
+    "publish:public": "npm publish --access public --cache .npm-cache",
+    "prepublishOnly": "npm run check && npm run pack:dry"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "UNLICENSED"
+}
